@@ -1,0 +1,12 @@
+/* GENERAL */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hurme Geometric Sans 3', sans-serif;
+}
