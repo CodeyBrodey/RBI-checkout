@@ -1,5 +1,10 @@
+
+
+
+/* PAGE TITLE */
 .page-title {
     padding: 1em 0.5em;
+    position: relative;
 
     font-size: 2rem;
     color: #D6001C;
@@ -7,8 +12,30 @@
 
 .page-title::after {
     content: '';
-    width: clamp(50px, 50px, 50px);
-    height: clamp(50px, 50px, 50px);
+    position: absolute;
+    bottom: 23px;
+    left: 15px;
+    width: clamp(25px, 25px, 25px);
+    height: clamp(4px, 4px, 4px);
 
     background-color: #D6001C;
+}
+
+
+/* CATALOG */
+.catalog {
+    margin: 0 3%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.catalog span {
+    display: block;
+    margin-bottom: 0.5em;
+
+    text-align: center;
+    font-weight: 800;
+    font-family: 'Hurme Geometric Sans 3', sans-serif;
 }
