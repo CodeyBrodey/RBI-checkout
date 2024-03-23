@@ -39,3 +39,7 @@
     font-weight: 300;
     cursor: pointer;
 }
+
+.selected {
+    color: #D60013;
+}
