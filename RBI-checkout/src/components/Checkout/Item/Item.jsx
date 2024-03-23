@@ -4,16 +4,30 @@ import { useState } from 'react'
 const Item = ({name, image, compClass, description, price}) => {
     let [quantity, setQuantity] = useState(0)
 
+    const handlePlusClick = () => {
+        setQuantity(quantity + 1)
+    }
+
+    const handleMinusClick = () => {
+        if(quantity > 0) {
+            setQuantity(quantity - 1)
+        } else {
+            null
+        }    
+    }
+
     return (
-        <div className={compClass + ' item'}>
-            <img src={'./' + image} alt={"delicious " + description} />
+        <div className={compClass + ' item ' + quantity > 0 ? 'selected' : ''}>
+            <div className='item-img-container'>
+                <img src={'./' + image} alt={"delicious " + description} />
+            </div>
             <span className={name}>{name}</span>
             <span className={name + '-price'}>{'$' + price}</span>
             <div className='quantity-container'>
                 <span>
-                    <button className='quantity-buttons'>+</button>
+                    <button className='quantity-buttons' onClick={handlePlusClick}>+</button>
                     {quantity}
-                    <button className='quantity-buttons'>-</button>
+                    <button className='quantity-buttons' onClick={handleMinusClick}>-</button>
                 </span>
             </div>
 

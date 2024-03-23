@@ -14,6 +14,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Hurme Geometric Sans 3';
+    src: url('../assets/font/HurmeGeometricSans3-Bold.woff2') format('woff2');
+    /* Additional font properties (optional) */
+    font-weight: 600;
+    font-style: normal;
+}
+
 
 header {
     display: flex;
