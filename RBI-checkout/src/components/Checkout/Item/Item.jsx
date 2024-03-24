@@ -6,15 +6,15 @@ const Item = ({name, image, compClass, description, price, totalItems, index}) =
 
     const handlePlusClick = () => {
         setQuantity(quantity + 1)
+        totalItems(quantity, index)
     }
 
     const handleMinusClick = () => {
         if(quantity > 0) {
             setQuantity(quantity - 1)
+            totalItems(quantity, index)
         }   
     }
-
-    totalItems(quantity, index)
 
 
 

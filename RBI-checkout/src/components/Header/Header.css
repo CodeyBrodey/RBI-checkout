@@ -98,7 +98,7 @@ header {
     width: clamp(25px, 25px, 25px);
 }
 
-.selected {
+.active-page {
     margin-bottom: -3px;
     border-bottom: 3px solid #D60013;
 }

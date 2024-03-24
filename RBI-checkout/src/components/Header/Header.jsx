@@ -26,7 +26,7 @@ const Header = () => {
                         <li>News</li>
                         <li>Contact</li>
                         <li>Sustainability</li>
-                        <li className='selected'>Checkout</li>
+                        <li className='active-page'>Checkout</li>
                         <div className='search-icon-container'>
                             <img src={search} className='search-icon'/>
                         </div>
