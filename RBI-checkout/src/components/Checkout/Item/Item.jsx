@@ -1,21 +1,34 @@
 import './Item.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 const Item = ({name, image, compClass, description, price, totalItems, index}) => {
+    /* PROPTYPES */
+    Item.propTypes = {
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        compClass: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number,
+        totalItems: PropTypes.func.isRequired,
+        index: PropTypes.number.isRequired,
+    }
+
     let [quantity, setQuantity] = useState(0)
 
     const handlePlusClick = () => {
         setQuantity(quantity + 1)
-        totalItems(quantity, index)
     }
 
     const handleMinusClick = () => {
         if(quantity > 0) {
             setQuantity(quantity - 1)
-            totalItems(quantity, index)
         }   
     }
 
+    useEffect(() => {
+        totalItems(quantity, index)
+    }, [quantity, index])
 
 
     return (

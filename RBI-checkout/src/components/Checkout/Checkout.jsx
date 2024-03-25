@@ -1,6 +1,6 @@
 import './Checkout.css'
 import Item from './Item/Item'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 /* PHOTOS */
 import whopper from '../assets/whopper.jpg'
 import icedCoffee from '../assets/iced-coffee.jpg'
@@ -12,11 +12,27 @@ import cart from '../assets/cart-shopping-solid.svg'
 const Checkout = () => {
     const [totalItems, setTotalItems] = useState([0, 0, 0, 0])
 
-    const itemArrToNum = totalItems.forEach((item) => {item[]})
+    const itemArrToNum = totalItems.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
+    let [totalPrice, setTotalPrice] = useState([])
+    
+    totalPrice = totalItems.map((value, index) => {
+        if(index == 0) {
+            return value * 5.49
+        } else if(index == 1) {
+            return value * 1.99
+        } else if(index == 2) {
+            return value * 3.99
+        } else if(index == 3) {
+            return value * 6.50
+        } else {
+            return 0
+        }
+    })
     useEffect(() => {
-        console.log(itemArrToNum)
-    }, [itemArrToNum])
+        setTotalPrice(totalPrice)
+    }, [totalPrice])
+    const priceArrToNum = totalPrice.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
 
     return(
@@ -30,7 +46,7 @@ const Checkout = () => {
 
                 <Item name='Chicken Sandwich' image={chickenSandwich} compClass='chicken-sandwich' description='chicken sandwich' price={3.99} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={2} />
 
-                <Item name='BBQ Cuban Sub' image={bbqCuban} compClass='bbq-cuban' description='sub' price={6.50} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={3} />
+                <Item name='BBQ Cuban Sub' image={bbqCuban} compClass='bbq-cuban' description='sub' price={'6.50'} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={3} />
             </div>
 
             <div className='cart'>
@@ -41,7 +57,7 @@ const Checkout = () => {
 
                 <div className='cart-sum'>
                     <span className='cart-title'>Total Sum:</span>
-                    <span>{'$' + null}</span>
+                    <span>{'$' + priceArrToNum}</span>
                 </div>
 
                 <button className='cart-button'>
