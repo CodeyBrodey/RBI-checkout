@@ -9,6 +9,8 @@
 
 body {
     font-family: 'Hurme Geometric Sans 3', sans-serif;
+}
+body, html {
     overflow-x: hidden;
-    width: 100%;
+    max-width: 100%;
 }
