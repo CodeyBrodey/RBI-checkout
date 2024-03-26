@@ -38,13 +38,13 @@ const Checkout = () => {
             <h1 className='page-title'>Checkout</h1>
 
             <div className='catalog'>
-                <Item name='Whopper' image={whopper} compClass='whopper' description='burger' price={5.49} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={0} />
+                <Item name='Whopper' image={whopper} description='burger' price={5.49} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={0} />
 
-                <Item name='Iced Coffee' image={icedCoffee} compClass='iced-coffee' description='iced coffee' price={1.99} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={1} />
+                <Item name='Iced Coffee' image={icedCoffee} description='iced coffee' price={1.99} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={1} />
 
-                <Item name='Chicken Sandwich' image={chickenSandwich} compClass='chicken-sandwich' description='chicken sandwich' price={3.99} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={2} />
+                <Item name='Chicken Sandwich' image={chickenSandwich} description='chicken sandwich' price={3.99} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={2} />
 
-                <Item name='BBQ Cuban Sub' image={bbqCuban} compClass='bbq-cuban' description='sub' price={'6.50'} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={3} />
+                <Item name='BBQ Cuban Sub' image={bbqCuban} description='sub' price={'6.50'} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={3} />
             </div>
 
             <div className='cart'>
