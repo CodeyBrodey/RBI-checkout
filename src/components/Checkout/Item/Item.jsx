@@ -36,7 +36,7 @@ const Item = ({name, image, description, price, totalItems, index, resetItems}) 
 
 
     return (
-        <div className={compClass + ' item'}>
+        <div className={'item'}>
             <div className='item-img-container'>
                 <img src={'./' + image} alt={"delicious " + description} />
             </div>
