@@ -2,16 +2,16 @@ import './Item.css'
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-const Item = ({name, image, compClass, description, price, totalItems, index}) => {
+const Item = ({name, image, description, price, totalItems, index, resetItems}) => {
     /* PROPTYPES */
     Item.propTypes = {
         name: PropTypes.string.isRequired,
         image: PropTypes.string.isRequired,
-        compClass: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         totalItems: PropTypes.func.isRequired,
         index: PropTypes.number.isRequired,
+        resetItems: PropTypes.bool.isRequired,
     }
 
     let [quantity, setQuantity] = useState(0)
@@ -29,6 +29,10 @@ const Item = ({name, image, compClass, description, price, totalItems, index}) =
     useEffect(() => {
         totalItems(quantity, index)
     }, [quantity])
+
+    useEffect(() => {
+        resetItems == true ? setQuantity(0) : null
+    })
 
 
     return (
