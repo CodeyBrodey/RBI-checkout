@@ -11,7 +11,7 @@ import cart from '../assets/cart-shopping-solid.svg'
 
 
 const Checkout = () => {
-    const [totalItems, setTotalItems] = useState([0, 0, 0, 0])
+    const [totalItems, setTotalItems] = useState([0, 0, 0, 0, 0])
 
     const itemArrToNum = totalItems.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
