@@ -6,6 +6,7 @@ import whopper from '../assets/whopper.jpg'
 import chickenSandwich from '../assets/chicken-sandwich.png'
 import bbqCuban from '../assets/bbq-cuban-sandwich.jpg'
 import icedCoffee from '../assets/coffee.jpg'
+import combo from '../assets/combo.png'
 import cart from '../assets/cart-shopping-solid.svg'
 
 
@@ -25,6 +26,8 @@ const Checkout = () => {
             return value * 3.99
         } else if(index == 3) {
             return value * 6.50
+        } else if(index == 4) {
+            return value * 15.00
         } else {
             return 0
         }
@@ -45,6 +48,8 @@ const Checkout = () => {
                 <Item name='Chicken Sandwich' image={chickenSandwich} description='chicken sandwich' price={3.99} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={2} />
 
                 <Item name='BBQ Cuban Sub' image={bbqCuban} description='sub' price={'6.50'} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={3} />
+
+                <Item name='RBI Am Hungry Combo' image={combo} description='combo' price={'15.00'} totalItems={(item, index) => {setTotalItems(totalItems.map((value, i) => index == i ? item : value))}} index={4} />
             </div>
 
             <div className='cart'>
