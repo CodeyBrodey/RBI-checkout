@@ -3,7 +3,7 @@ import Item from './Item/Item'
 import { useState } from 'react'
 /* PHOTOS */
 import whopper from '../assets/whopper.jpg'
-import icedCoffee from '../assets/iced-coffee.jpg'
+import icedCoffee from '../assets/whopper.jpg'
 import chickenSandwich from '../assets/chicken-sandwich.png'
 import bbqCuban from '../assets/bbq-cuban-sandwich.jpg'
 import cart from '../assets/cart-shopping-solid.svg'
