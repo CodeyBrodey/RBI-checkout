@@ -10,5 +10,5 @@
 body {
     font-family: 'Hurme Geometric Sans 3', sans-serif;
     overflow-x: hidden;
-    position: relative;
+    width: 100%;
 }
