@@ -9,7 +9,7 @@ const Item = ({name, image, compClass, description, price, totalItems, index}) =
         image: PropTypes.string.isRequired,
         compClass: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        price: PropTypes.number,
+        price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         totalItems: PropTypes.func.isRequired,
         index: PropTypes.number.isRequired,
     }
@@ -28,7 +28,7 @@ const Item = ({name, image, compClass, description, price, totalItems, index}) =
 
     useEffect(() => {
         totalItems(quantity, index)
-    }, [quantity, index])
+    }, [quantity])
 
 
     return (

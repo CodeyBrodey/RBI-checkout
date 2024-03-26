@@ -1,6 +1,6 @@
 import './Checkout.css'
 import Item from './Item/Item'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 /* PHOTOS */
 import whopper from '../assets/whopper.jpg'
 import icedCoffee from '../assets/iced-coffee.jpg'
@@ -14,7 +14,7 @@ const Checkout = () => {
 
     const itemArrToNum = totalItems.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
-    let [totalPrice, setTotalPrice] = useState([])
+    let [totalPrice] = useState([])
     
     totalPrice = totalItems.map((value, index) => {
         if(index == 0) {
@@ -29,10 +29,8 @@ const Checkout = () => {
             return 0
         }
     })
-    useEffect(() => {
-        setTotalPrice(totalPrice)
-    }, [totalPrice])
-    const priceArrToNum = totalPrice.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    
+    const priceArrToNum = totalPrice.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toFixed(2);
 
 
     return(
